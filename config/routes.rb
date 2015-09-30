@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create', as: 'login'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 
-  root 'tweets#show'
+  root 'users#index'
 end
