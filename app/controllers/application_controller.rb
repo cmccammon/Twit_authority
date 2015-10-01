@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user
   # Run 'current_user' before every controller action
+
   def authenticate_user
     unless user_logged_in?
       redirect_to new_login_path
