@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><%= link_to 'User list', users_path %></li>
+  <li><%= link_to 'Tweets', tweets_path %></li>
+</ul>
 
 <h1>Listing Users</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Username</th>
@@ -25,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path, class: 'btn btn-info btn-xs' %>

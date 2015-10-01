@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :create, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_filter :authenticate_user, only: [:show, :new, :create]
   # GET /users
   # GET /users.json
@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @tweets = Tweet.all
   end
 
   # GET /users/new
