@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @tweets.each do |tweet| %>
+    <% @user.tweets.each do |tweet| %>
       <tr>
         <td><%= tweet.message %></td>
         <td><%= tweet.user.username %></td>
