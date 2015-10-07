@@ -1,3 +1,4 @@
+/* global $ */
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14,3 +15,24 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+var validatorGenerator = function (validator) {
+  var selector = $(validator.selector);
+  selector.on('keydown', function () {
+    var $errorField = selector.parent().find('.errors');
+    if (selector.val().length > validator.maxLength) {
+      selector.addClass('field-with-errors');
+      $errorField.html(validator.message);
+    } else {
+      selector.removeClass('field-with-errors')
+                .addClass('correct-field');
+      $errorField.html('');
+    }
+  });
+};
+//Client side validation
+var tweetMessageValidator = {
+  selector: '#tweet_message',
+  maxLength: 140,
+  message: 'Post Title must be a max of 15 characters'
+};
+validatorGenerator(tweetMessageValidator);

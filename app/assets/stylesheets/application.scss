@@ -1,2 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.field-with-errors {
+  transition: all 1s;
+  outline: 2px solid red;
+  border: 2px solid red;
+  box-shadow: 2px 2px 0px gray;
+  box-shadow: 3px 3px 0px gray;
+  box-shadow: 4px 4px 0px gray;
+  // box-shadow: 5px 5px 0px gray;
+  margin: 5px;
+}

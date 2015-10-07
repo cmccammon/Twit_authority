@@ -27,4 +27,3 @@ class SessionsController < ApplicationController
     session[:logged_in_users_id] = user.id
   end
 end
-

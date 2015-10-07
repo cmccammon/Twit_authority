@@ -13,9 +13,11 @@
 
   <div class="field">
     <%= f.label :message %><br>
-    <%= f.text_field :message %>
-  </div>
+    <%= f.text_field :message, placeholder: 'Best Tweet ever' %>
+    <p class='errors'></p>
+  </div><br>
   <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class='btn btn-primary' id='newTweet'>New Tweet</div>
+
+</div><br>
 <% end %>

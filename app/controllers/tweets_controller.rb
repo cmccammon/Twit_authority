@@ -19,11 +19,15 @@ class TweetsController < ApplicationController
 
   # GET /tweets/1/edit
   def edit
+   unless current_user == @user
+   redirect_to :back, alert: "You are not AUTHORIZED to edit this user."
+   end
   end
 
   # POST /tweets
   # POST /tweets.json
   def create
+
     @tweet = Tweet.new(tweet_params)
     @tweet.user_id = current_user.id
 
@@ -41,6 +45,9 @@ class TweetsController < ApplicationController
   # PATCH/PUT /tweets/1
   # PATCH/PUT /tweets/1.json
   def update
+    unless current_user == @user
+    redirect_to :back, alert: "You are not AUTHORIZED to edit this user."
+    end
     respond_to do |format|
       if @tweet.update(tweet_params)
         format.html { redirect_to @tweet, notice: 'Tweet was successfully updated.' }
@@ -55,6 +62,9 @@ class TweetsController < ApplicationController
   # DELETE /tweets/1
   # DELETE /tweets/1.json
   def destroy
+    unless current_user == @user
+      redirect_to :back, alert: "You are not AUTHORIZED to edit this user."
+    end
     @tweet.destroy
     respond_to do |format|
       format.html { redirect_to tweets_url, notice: 'Tweet was successfully destroyed.' }
