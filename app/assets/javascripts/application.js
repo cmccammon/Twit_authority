@@ -32,7 +32,7 @@ var validatorGenerator = function (validator) {
 //Client side validation
 var tweetMessageValidator = {
   selector: '#tweet_message',
-  maxLength: 140,
-  message: 'Post Title must be a max of 15 characters'
+  maxLength: 40,
+  message: 'Tweet Message must be a max of 40 characters'
 };
 validatorGenerator(tweetMessageValidator);
